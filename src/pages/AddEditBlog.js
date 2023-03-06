@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {MDBValidation, MDBInput, MDBtn} from "mdb-react-ui-kit";
+import {MDBValidation, MDBInput, MDBBtn} from "mdb-react-ui-kit";
 import {useNavigate, userNavigate} from "react-router-dom"
 import axios from "axios";
 import {toast} from "react-toastify";
@@ -36,7 +36,7 @@ aligncontent: "center"}}
 value={title || ""}
 name= "title"
 type="text"
-onChange={onInputChange}
+// onChange={onInputChange}
 required
 label="Title"
 validation="Please provide a title"
@@ -48,7 +48,7 @@ invalid
 value={description || ""}
 name= "description"
 type="file"
-onChange={(e) => onUploadImage(e.target.files)}
+// onChange={(e) => onUploadImage(e.target.files)}
 required
 label="description"
 validation="Please provide a description"
@@ -56,18 +56,20 @@ invalid
 />
 <br />
 
-<select 
+{/* <select 
 className='categoryDropdown'
  onChange={onCatergoryChnage} value={category} /> 
 <option>Please select category</option>
 {options.map((option, index) =>(<option value={option || ""} key={index}>{option}
 </option>
-) )}
+) 
+)
+} */}
 
 {/* </select> */}
 <br/> <br/>
-<MDBtn type="submit"  style={{marginRight: "10px"}}>Add</MDBtn>
-<MDBtn color="danger" style={{marginRight: "10px"}} onClick={()=>navigate("/")}>Go Back</MDBtn>
+<MDBBtn type="submit"  style={{marginRight: "10px"}}>Add</MDBBtn>
+<MDBBtn color="danger" style={{marginRight: "10px"}} onClick={()=>navigate("/")}>Go Back</MDBBtn>
 </div>
  </MDBValidation>
   );
